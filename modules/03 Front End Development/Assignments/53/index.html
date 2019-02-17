@@ -10,16 +10,62 @@
         * {
             font-size: 16px;
         }
-        th, tr {
+
+        th,
+        tr {
             height: 25px;
         }
+
         h1 {
             width: 100%;
         }
+
         #toTop {
             position: fixed;
-            bottom: 0;
-            left: 200px;
+            bottom: 0%;
+            left: 3%;
+            background-color: #BFDD40;
+        }
+
+        #tableDiv {
+            display: inline-block;
+            position: relative;
+            bottom: 0%;
+            left: 50%;
+            width: 700px;
+            /* float: left; */
+            background-color: #6654FF;
+            margin-left: -350px;
+        }
+
+        table {
+            background-color: #BF9E40;
+            width: 700px;
+        }
+        thead {
+            background-color: #6CCDFF;
+        }
+        tbody {
+            background-color: maroon;
+            color: white;
+        }
+        nav {
+            float: right;
+            width: 100px;
+            background-color: #FFA20D;
+        }
+
+        #submitBtn {
+            color: red;
+            margin-top: 20px;
+        }
+
+        #pick {
+            position: relative;
+            bottom: 0%;
+            left: 5%;
+            color: green;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -160,29 +206,63 @@
         enim, at dolor placerat leo est, eget vulputate leo, vestibulum commodo rutrum dui netus pede. Feugiat ultrices,
         fusce congue velit nam, suspendisse pellentesque est vivamus pede. Eu elit est, pretium a tempor, a nibh sed tellus,
         elementum suspendisse.</p>
-    <table>
-        <th>
-            <td>Student Name:</td>
-            <td>Subject:</td>
-        </th>
-    </table>
-    <nav>
-        <select name="" id="">
+    <div id='contents'>
+        <div id='tableDiv'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name:</th>
+                        <th>Subject:</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id='pick'>Pick One</button>
+        </div>
+        <nav>
+            <form>
+                <select name="select1" id="select1">
                     <option value="david">David</option>      
                     <option value="moshiko">Moshiko</option>  
                     <option value="shani">Shani</option>  
                     <option value="matan">Matan</option>      
                     <option value="amitay">Amitay</option>  
                     <option value="ofek">Ofek</option>  
-           </select>
-           <br />
-           <br />
-           <button>Submit</button>
-    </nav>
-    <button id='pick'>Pick One</button>
+                </select>
+                <select name="select1" id="select2">
+                    <option value="z-index">Z-index</option>      
+                    <option value="flex">Flex</option>  
+                    <option value="align">Align</option>  
+                    <option value="mediaQuery">Query</option>      
+                    <option value="max-width">Max-width</option>  
+                    <option value="overflow">Overflow</option>  
+                </select>
+                <button type="button" id='submitBtn' onclick="submitName()">Submit</button>
+            </form>
+        </nav>
+
+    </div>
+
+    <br />
     <a href="#header" id='toTop'>Back to top</a>
     <script>
-        
+        function submitName() {
+            var selectName = document.getElementsByTagName('select')[0];
+            var selected = selectName.options[selectName.selectedIndex].value;
+            var selectSubject = document.getElementsByTagName('select')[1];
+            var selectedSubject = selectSubject.options[selectSubject.selectedIndex].value;
+            var table = document.getElementsByTagName('table')[0].children[1];
+            var tr = document.createElement('tr');
+            var th1 = document.createElement('th');
+            var th2 = document.createElement('th');
+            th1.innerText = selected;
+            th2.innerText = selectedSubject;
+            tr.appendChild(th1);
+            tr.appendChild(th2);
+            table.appendChild(tr);
+            console.log(selected, selectedSubject);
+            
+        }
     </script>
 </body>
 
