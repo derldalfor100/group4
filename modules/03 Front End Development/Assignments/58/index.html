@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!--height:100%-->
 
 <head>
     <meta charset="UTF-8">
@@ -9,20 +9,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div id="content" class="middle">
-        <div id="container">
-            <div id="header">ITube</div>
-            <div id="wrapper">
-                <div id="player">
-                    <video id="player-video" controls src=""></video>
+<body onload='loadGif()'><!--height:100%-->
+    <div id="content" class="middle"><!--flex-->
+        <div id="container"><!--grid - by rows-->
+            <div id="header">ITube</div><!--flex-->
+            <div id="wrapper"><!--grid - by cols-->
+                <div id="player"><!--flex-->
+                    <video id="player-video" controls src="" style='display: none'></video>
+                    <img id='gif' src="" alt="">
                     <div id="player-details">
                         <h2 id="player-title">Video Title</h2>
                         <h3 id="player-artist">Artist Name</h3>
                         <h4 id="player-description">Description</h4>
                     </div>
                 </div>
-                <div id="menu"></div>
+                <div id="menu"></div><!--overflow:auto-->
             </div>
         </div>
     </div>
