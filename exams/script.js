@@ -51,7 +51,6 @@ function checkNextPage(_url1, _page) {
             addBtn.disabled = false;
         }else {
             addBtn.disabled = true;
-            addBtn.style = 'display: none';
         }
         
     }).catch(err => {err})
