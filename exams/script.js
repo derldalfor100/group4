@@ -2,7 +2,9 @@ let page;
 function onSubmit(e){
     if(e !== undefined){
         let results = document.getElementById('results');
+        let addBtn = document.getElementById('loadmore');
         results.innerHTML = '';
+        addBtn.disabled = true;
         page = 1;
     }
     let err = document.getElementById('err');
