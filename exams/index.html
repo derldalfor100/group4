@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam</title>
+    <style>
+        form {
+            top: 0;
+            position: sticky;
+            background-color: yellow;
+        }
+
+        form>button {
+            display: block;
+        }
+
+        #err {
+            margin-top: 0px;
+            display: none;
+        }
+        #loadmore {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="search">Search name:</label>
+        <div id='searchDiv'>
+            <input id='searchInput' type="search">
+            <p id='err'>Something is wrong...</p>
+        </div>
+        <button type='button' onclick="onSubmit(event)">Submit</button>
+    </form>
+    <hr>
+    <div id='results'>
+    </div>
+    <button id='loadmore' onclick="onLoadMore()">Load More</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
